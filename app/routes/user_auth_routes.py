@@ -30,7 +30,7 @@ def register():
         flash("Registration successful! Please log in.", "success")
         return redirect(url_for("auth.login"))
 
-    return render_template("register.html")
+    return render_template("auth/register.html")
 
 @auth_bp.route("/login", methods=["GET", "POST"])
 def login():
@@ -52,7 +52,7 @@ def login():
         flash("Login successful!", "success")
         return redirect(url_for("auth.index"))
 
-    return render_template("login.html")
+    return render_template("auth/login.html")
 
 @auth_bp.route("/logout")
 @login_required
