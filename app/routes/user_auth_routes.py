@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, session
+from flask import Blueprint, render_template, request, redirect, url_for, flash, session, current_app
 from flask_login import login_user, logout_user, login_required
 from app.models.user_auth_model import Customer
 from app import auth_mongo
@@ -45,8 +45,9 @@ def login():
             flash(result["error"], "danger")
             return redirect(url_for("auth.login"))
 
-        # Log in user and store session data
+        # Log in user with Flask-Login
         user = result["customer"]
+        login_user(user)  # Now @login_required will work
         session["user_name"] = user.username  # Store username in session
         
         flash("Login successful!", "success")
@@ -59,6 +60,12 @@ def login():
 def logout():
     """Handle user logout."""
     session.pop("user_name", None)  # Remove user session
-    logout_user()
+    logout_user()  # Properly logs out user
     flash("Logged out successfully.", "info")
     return redirect(url_for("auth.index"))
+
+# Debugging Route to Check SECRET_KEY
+@auth_bp.route("/debug_secret_key")
+def debug_secret_key():
+    """Check if SECRET_KEY is loaded properly."""
+    return f"SECRET_KEY: {current_app.config.get('SECRET_KEY')}"
