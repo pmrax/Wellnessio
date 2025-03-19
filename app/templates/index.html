@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="{{ url_for('static', filename='Icon Wellnessio.png') }}">
+    <link rel="icon" href="{{ url_for('static', filename='default_images/Icon Wellnessio.png') }}">
     <title>Wellnessio.com</title>
      <!-- Bootstrap CSS -->
      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -33,21 +33,21 @@
                 </form>
             </div>
             <div class="profile-dropdown">
-                {% if session['user'] %}
-                    <span class="icon profile">👤 {{ session['user'] }}</span>
-                    <div class="dropdown-content">
-                        <a href="#">Profile</a>
-                        <a href="#">Settings</a>
-                        <a href="{{ url_for('logout') }}">Logout</a>
-                    </div>
-                {% else %}
-                    <span class="icon profile">👤</span>
-                    <div class="dropdown-content">
-                        <a href="{{ url_for('auth.login') }}">Login</a>
-                        <a href="{{ url_for('auth.register') }}">Register</a>
-                    </div>
-                {% endif %}
-            </div>
+              {% if session['user_name'] %}
+                  <span class="icon profile">👤 {{ session['user_name'] }}</span>
+                  <div class="dropdown-content">
+                      <a href="#">Profile</a>
+                      <a href="#">Settings</a>
+                      <a href="{{ url_for('auth.logout') }}">Logout</a>
+                  </div>
+              {% else %}
+                  <span class="icon profile">👤</span>
+                  <div class="dropdown-content">
+                      <a href="{{ url_for('auth.login') }}">Login</a>
+                      <a href="{{ url_for('auth.register') }}">Register</a>
+                  </div>
+              {% endif %}
+          </div>
         </div>
         <div class="content">
             <div class="content_text">
@@ -73,10 +73,9 @@
                 </div>
           </div>
           
-  
             <div class="col">
               <div class="card h-100" style="width: 25rem;">
-                  <img src="emergency-assistance-img.jpg" class="card-img-top card-img-custom" alt="img of health">
+                  <img src="{{ url_for('static', filename='default_images/emergency-assistance-img.jpg') }}" class="card-img-top card-img-custom" alt="img of health">
                   <div class="card-body">
                     <h5 class="card-title">Emergency Health Assistant</h5>
                     <a href="About Project.html" class="btn btn-primary">Read</a>
