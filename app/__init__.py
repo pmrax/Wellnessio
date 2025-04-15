@@ -10,6 +10,7 @@ load_dotenv()
 
 # Initialize PyMongo extension
 auth_mongo = PyMongo()
+ai_mongo = PyMongo()
 
 # Initialize Flask-Login
 login_manager = LoginManager()
@@ -28,21 +29,25 @@ def create_app(config_class=Config):
 
     # Initialize extensions
     app.config["MONGO_URI"] = app.config["AUTH_MONGO_URI"]
+    app.config["MONGO_URI"] = app.config["AI_MONGO_URI"]
+    
     auth_mongo.init_app(app)
+    ai_mongo.init_app(app)
 
     # Initialize Flask-Login
     login_manager.init_app(app)
     login_manager.login_view = "auth.login"  # Redirect to login page if unauthorized
 
     # Define user loader function for Flask-Login
-    from app.models.user_auth_model import Customer
+    from app.authentication.user_auth_model import Customer
+    
     @login_manager.user_loader
     def load_user(user_id):
         """Loads user from the database using Flask-Login."""
         return Customer.get_customer_by_id(user_id)
 
     # Register blueprints
-    from app.routes.user_auth_routes import auth_bp
+    from app.authentication.user_auth_routes import auth_bp
     app.register_blueprint(auth_bp)
 
     return app

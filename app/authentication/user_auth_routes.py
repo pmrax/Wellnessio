@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session, current_app
 from flask_login import login_user, logout_user, login_required
-from app.models.user_auth_model import Customer
+from app.authentication.user_auth_model import Customer
 from app import auth_mongo
 
 auth_bp = Blueprint("auth", __name__)
