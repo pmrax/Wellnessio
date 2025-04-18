@@ -1,21 +1,29 @@
 wellnessio/
-├── app/
-│   ├── __init__.py              
-│   ├── models/                  
-│   │   ├── user_auth_model.py
-│   ├── routes/                 
-│   │   ├── user_auth_routes.py           
-│   │   └── main.py              
-│   ├── templates/              
-│   │   └── index.html
-│   ├── static/                  
-│       └── style.css
-├── run.py                      
-├── requirements.txt
-├── config.py                
-├── .env                      
-├── .git
-└── README.md
+|-- app/
+    |-- authented/
+        |-- models/
+        |-- routes/
+    |-- authentication/
+        |-- auth_model.py
+        |-- auth_routes.py
+    |-- ai/
+        |-- ai_model/
+            |-- medicine_model.py
+        |-- ai_routes/
+            |-- medicine_routes.py
+    |-- static/
+    |-- templates/
+        |-- auth/
+            |-- signup.html
+            |-- signin.html
+            |-- reset_password.html
+            |-- changed_password.html
+            |-- send_mail.html
+        |-- index/main.html
+    |-- __init__.py
+|-- config.py
+|-- .env
+|-- run.py
+|-- requirements.txt
 |-- directory_structure.txt
-
-
+|-- .git
