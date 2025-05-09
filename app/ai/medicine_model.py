@@ -1,48 +1,56 @@
-from pymongo import MongoClient
-from bson.regex import Regex
+from flask import current_app
+from bson import ObjectId
 
-class MedicineModel:
-    def __init__(self, db_uri="mongodb://localhost:27017/", db_name="wellnessio_ai", collection_name="disease_medicine"):
-        self.client = MongoClient(db_uri)
-        self.db = self.client[db_name]
-        self.collection = self.db[collection_name]
+class DiseaseMedicineModel:
+    def __init__(self, mongo):
+        # mongo is the PyMongo instance
+        self.collection = mongo.db.disease_medicine
 
-    def get_medicines_by_disease(self, disease_name):
-        """Find medicines for a given disease name (works for both flat and nested structure)."""
-        # Try matching top-level disease
-        result = self.collection.find_one({"disease": Regex(f"^{disease_name}$", "i")})
-        if result:
-            return {
-                "disease": result["disease"],
-                "description": result.get("description", ""),
-                "medicines": result.get("medicines", [])
-            }
+    def get_all_categories(self):
+        return self.collection.distinct("category")
 
-        # Try nested search
-        cursor = self.collection.find({"diseases.name": Regex(f"^{disease_name}$", "i")})
-        for doc in cursor:
-            for disease in doc.get("diseases", []):
-                if disease["name"].lower() == disease_name.lower():
-                    return {
-                        "disease": disease["name"],
-                        "symptoms": disease.get("symptoms", []),
-                        "medicines": disease.get("medicines", [])
-                    }
+    def get_all_diseases(self):
+        """Returns a list of all diseases with category and subcategory."""
+        data = self.collection.find({})
+        diseases = []
+        for item in data:
+            for disease in item.get("diseases", []):
+                diseases.append({
+                    "name": disease["name"],
+                    "category": item["category"],
+                    "sub_category": item["sub_category"]
+                })
+        return diseases
+
+    def find_disease_by_name(self, disease_name):
+        """Find disease by exact name."""
+        doc = self.collection.find_one({
+            "diseases.name": disease_name
+        })
+        if not doc:
+            return None
+
+        for disease in doc["diseases"]:
+            if disease["name"].lower() == disease_name.lower():
+                return {
+                    "category": doc["category"],
+                    "sub_category": doc["sub_category"],
+                    **disease
+                }
         return None
 
-    def search_by_symptom(self, symptom_keyword):
-        """Search for diseases and medicines based on a symptom keyword."""
-        results = []
-
-        # Search nested disease objects
-        cursor = self.collection.find({"diseases.symptoms": {"$elemMatch": {"$regex": symptom_keyword, "$options": "i"}}})
+    def find_by_symptom(self, symptom):
+        """Find diseases that have the given symptom."""
+        matched = []
+        cursor = self.collection.find({})
         for doc in cursor:
             for disease in doc.get("diseases", []):
-                if any(symptom_keyword.lower() in s.lower() for s in disease.get("symptoms", [])):
-                    results.append({
-                        "disease": disease["name"],
-                        "symptoms": disease.get("symptoms", []),
-                        "medicines": disease.get("medicines", [])
+                if any(symptom.lower() in s.lower() for s in disease.get("symptoms", [])):
+                    matched.append({
+                        "name": disease["name"],
+                        "category": doc["category"],
+                        "sub_category": doc["sub_category"],
+                        "description": disease["description"],
+                        "medicines": disease["medicines"]
                     })
-
-        return results
+        return matched

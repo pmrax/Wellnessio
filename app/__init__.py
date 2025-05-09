@@ -8,7 +8,7 @@ from config import Config
 # Load environment variables
 load_dotenv()
 
-# Initialize PyMongo extension
+# Initialize PyMongo instances
 auth_mongo = PyMongo()
 ai_mongo = PyMongo()
 
@@ -27,12 +27,9 @@ def create_app(config_class=Config):
     if not app.config["SECRET_KEY"]:
         raise RuntimeError("SECRET_KEY is not set! Please set it in the environment or config file.")
 
-    # Initialize extensions
-    app.config["MONGO_URI"] = app.config["AUTH_MONGO_URI"]
-    app.config["MONGO_URI"] = app.config["AI_MONGO_URI"]
-    
-    auth_mongo.init_app(app)
-    ai_mongo.init_app(app)
+    # Initialize MongoDB connections with distinct URIs
+    auth_mongo.init_app(app, uri=app.config["AUTH_MONGO_URI"])
+    ai_mongo.init_app(app, uri=app.config["AI_MONGO_URI"])
 
     # Initialize Flask-Login
     login_manager.init_app(app)
@@ -40,7 +37,7 @@ def create_app(config_class=Config):
 
     # Define user loader function for Flask-Login
     from app.authentication.user_auth_model import Customer
-    
+
     @login_manager.user_loader
     def load_user(user_id):
         """Loads user from the database using Flask-Login."""
@@ -48,6 +45,12 @@ def create_app(config_class=Config):
 
     # Register blueprints
     from app.authentication.user_auth_routes import auth_bp
+    from app.ai.medicine_routes import ai_bp
+    
     app.register_blueprint(auth_bp)
+    app.register_blueprint(ai_bp)
 
     return app
+
+
+
