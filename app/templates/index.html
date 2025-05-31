@@ -36,7 +36,7 @@
               {% if session['user_name'] %}
                   <span class="icon profile">👤 {{ session['user_name'] }}</span>
                   <div class="dropdown-content">
-                      <a href="#">Profile</a>
+                      <a href="{{ url_for('profile.profile') }}">Profile</a>
                       <a href="#">Settings</a>
                       <a href="{{ url_for('auth.logout') }}">Logout</a>
                   </div>
