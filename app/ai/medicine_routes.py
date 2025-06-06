@@ -41,7 +41,7 @@ def chatbot():
                         response += f"<em>Description:</em> {res['description']}<br>"
                         response += f"<strong>Medicines:</strong><br>"
                         for med in res.get('medicines', []):
-                            response += f"- {med['name']} ({med['type']}): {med['dosage']}<br>"
+                            response += f"- {med['name']} ({med['type']}): {med['dosage']} — {med.get('frequency', 'N/A')}<br>"
                         response += "<hr>"
 
                 else:
