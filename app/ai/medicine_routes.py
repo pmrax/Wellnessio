@@ -6,10 +6,7 @@ ai_bp = Blueprint("ai", __name__, url_prefix="/ai")
 
 @ai_bp.route("/chat", methods=["GET", "POST"])
 def chatbot():
-    # Create the model instance here, when ai_mongo is ready
     disease_model = DiseaseMedicineModel(ai_mongo)
-    print("Mongo instance:", ai_mongo)
-    print("Mongo DB:", ai_mongo.db)
     response = None
     user_input = ""
 
@@ -17,30 +14,37 @@ def chatbot():
         user_input = request.form.get("user_input", "").strip()
 
         if user_input:
-            # First try to find by disease name
+            # Step 1: Attempt name-based detection
             disease_data = disease_model.find_disease_by_name(user_input)
 
             if disease_data:
-                response = f"🧾 Disease: {disease_data['name']}<br>" \
-                           f"📖 Description: {disease_data['description']}<br>" \
-                           f"🧬 Category: {disease_data['category']} / {disease_data['sub_category']}<br><br>" \
-                           f"💊 Medicines:<br>"
-                for med in disease_data['medicines']:
+                response = f"""
+                🧾 <strong>Disease:</strong> {disease_data['name']}<br>
+                📖 <strong>Description:</strong> {disease_data['description']}<br>
+                🧬 <strong>Category:</strong> {disease_data['category']} / {disease_data['sub_category']}<br><br>
+                💊 <strong>Medicines:</strong><br>
+                """
+                for med in disease_data.get('medicines', []):
                     response += f"- <strong>{med['name']}</strong> ({med['type']}): {med['dosage']} — {med.get('frequency', 'N/A')}<br>"
+
             else:
-                # If not found, try to match symptom
-                results = disease_model.find_by_symptom(user_input)
-                if results:
-                    response = f"🩺 Found diseases matching symptom '{user_input}':<br><br>"
-                    for res in results:
-                        response += f"<strong>{res['name']}</strong>: {res['description']}<br>Medicines:<br>"
-                        for med in res['medicines']:
+                # Step 2: Attempt symptom-based fuzzy matching
+                matched_diseases = disease_model.smart_find_by_symptoms(user_input)
+
+                if matched_diseases:
+                    response = f"🩺 <strong>Possible conditions based on your symptoms:</strong> \"{user_input}\"<br><br>"
+
+                    for res in matched_diseases[:3]:  # Top 3 only
+                        explanation = disease_model.explain_match(res)
+                        response += f"{explanation}<br><br>"
+                        response += f"<em>Confidence Score:</em> {res['confidence_score']}%<br>"
+                        response += f"<em>Description:</em> {res['description']}<br>"
+                        response += f"<strong>Medicines:</strong><br>"
+                        for med in res.get('medicines', []):
                             response += f"- {med['name']} ({med['type']}): {med['dosage']}<br>"
-                        response += "<br>"
+                        response += "<hr>"
+
                 else:
-                    response = "❌ Sorry, I couldn't find any matching disease or symptom."
+                    response = "❌ Sorry, I couldn't find any matching disease or symptoms. Try describing your issue differently."
 
     return render_template("ai/chatbot.html", user_input=user_input, response=response)
-
-
-
