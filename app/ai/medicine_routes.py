@@ -4,12 +4,12 @@ from app import ai_mongo
 
 ai_bp = Blueprint("ai", __name__, url_prefix="/ai")
 
-# Initialize model
-disease_model = DiseaseMedicineModel(ai_mongo)
-
 @ai_bp.route("/chat", methods=["GET", "POST"])
 def chatbot():
-    """Render AI chatbot and handle user input."""
+    # Create the model instance here, when ai_mongo is ready
+    disease_model = DiseaseMedicineModel(ai_mongo)
+    print("Mongo instance:", ai_mongo)
+    print("Mongo DB:", ai_mongo.db)
     response = None
     user_input = ""
 

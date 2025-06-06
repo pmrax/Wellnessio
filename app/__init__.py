@@ -34,12 +34,9 @@ def create_app(config_class=Config):
     from app.authentication.user_auth_routes import auth_bp
     from app.ai.medicine_routes import ai_bp
     from app.authented.profile_routes import profile_bp
-    
+
     app.register_blueprint(auth_bp)
     app.register_blueprint(ai_bp)
     app.register_blueprint(profile_bp)
 
     return app
-
-
-
