@@ -2,91 +2,231 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>WellnessIO AI Chatbot</title>
+  <title>WellnessIO – AI Health Assistant</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f1f4f9;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .chat-header {
+      background: linear-gradient(135deg, #198754, #43c59e);
+      color: white;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .chat-header h4 {
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .chat-header p {
+      margin: 0;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .status-badge {
+      font-size: 0.75rem;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+    }
+
+    .profile-dropdown {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .profile {
+        padding: 5px 15px;
+        background: #f0f0f0;
+        border-radius: 20px;
+        color: #333;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background: white;
+        min-width: 120px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: #333;
+        padding: 8px 15px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background: #f5f5f5;
+    }
+
+    .profile-dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    #chat-body {
+      height: calc(100vh - 180px);
+      overflow-y: auto;
+      padding: 2rem;
+      background: #ffffff;
+    }
+
+    .chat-bubble {
+      max-width: 80%;
+      padding: 0.9rem 1.3rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1.2rem;
+      position: relative;
+    }
+
+    .chat-user {
+      background: #e2f6ec;
+      color: #0c513f;
+      margin-left: auto;
+    }
+
+    .chat-bot {
+      background: #f1f1f1;
+      color: #212529;
+      margin-right: auto;
+    }
+
+    .chat-avatar {
+      width: 42px;
+      height: 42px;
+      background: #198754;
+      color: white;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .chat-input {
+      background: white;
+      padding: 1rem 2rem;
+      border-top: 1px solid #dee2e6;
+    }
+
+    .chat-input input {
+      border: none;
+      box-shadow: none;
+    }
+
+    .chat-input input:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    .chat-input .btn {
+      border-radius: 50%;
+      padding: 0.6rem 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .chat-header, .chat-input {
+        padding: 1rem;
+      }
+
+      #chat-body {
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
-<body class="bg-light">
+<body>
 
-<div class="container-fluid vh-100">
-  <div class="row h-100">
-
-    <!-- Sidebar -->
-    <div class="col-12 col-md-3 border-end bg-white p-4 overflow-auto">
-      <h5 class="mb-4"><i class="bi bi-chat-left-text me-2"></i>Recent Chats</h5>
-      <div class="list-group">
-        <button class="list-group-item list-group-item-action d-flex align-items-center">
-          <i class="bi bi-robot me-2"></i> Cold Symptoms
-        </button>
-        <button class="list-group-item list-group-item-action d-flex align-items-center">
-          <i class="bi bi-robot me-2"></i> Diabetes Check
-        </button>
-        <button class="list-group-item list-group-item-action d-flex align-items-center">
-          <i class="bi bi-robot me-2"></i> Allergy Help
-        </button>
-        <button class="list-group-item list-group-item-action d-flex align-items-center">
-          <i class="bi bi-robot me-2"></i> Back Pain
-        </button>
-      </div>
+<div class="chat-area d-flex flex-column h-100">
+  <!-- Header -->
+  <div class="chat-header">
+    <div class="d-flex flex-column">
+      <h4><i class="bi bi-robot me-2"></i>WellnessIO</h4>
+      <p>Your AI Health Companion 🤖💬</p>
     </div>
 
-    <!-- Chat Area -->
-    <div class="col-12 col-md-9 d-flex flex-column bg-white p-0">
+    <div class="d-flex align-items-center gap-3">
+      <span class="status-badge text-white">Online</span>
 
-      <!-- Header -->
-      <div class="bg-success text-white p-4 border-bottom">
-        <h4 class="mb-1"><i class="bi bi-robot me-2"></i>WellnessIO – AI Health Assistant</h4>
-        <p class="mb-0 small">Ask about symptoms, treatments, or health advice</p>
-      </div>
-
-      <!-- Messages -->
-      <div class="flex-grow-1 overflow-auto p-4" id="chat-body">
-        {% if user_input %}
-        <div class="d-flex justify-content-end mb-3">
-          <div class="bg-success-subtle text-dark p-3 rounded-pill">
-            {{ user_input }}
+      <div class="profile-dropdown">
+        {% if session['user_name'] %}
+          <span class="icon profile">👤 {{ session['user_name'] }}</span>
+          <div class="dropdown-content">
+              <a href="{{ url_for('profile.profile') }}">Profile</a>
+              <a href="#">Settings</a>
+              <a href="{{ url_for('auth.logout') }}">Logout</a>
           </div>
-        </div>
-        {% endif %}
-
-        {% if response %}
-        <div class="d-flex mb-3">
-          <div class="me-2">
-            <div class="bg-secondary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
-              🤖
-            </div>
+        {% else %}
+          <span class="icon profile">👤</span>
+          <div class="dropdown-content">
+              <a href="{{ url_for('auth.login') }}">Login</a>
+              <a href="{{ url_for('auth.register') }}">Register</a>
           </div>
-          <div class="bg-light border p-3 rounded-pill">
-            {{ response | safe }}
-          </div>
-        </div>
         {% endif %}
       </div>
-
-      <!-- Chat Input -->
-      <div class="border-top p-3">
-        <form method="POST" class="input-group">
-          <span class="input-group-text bg-white border-end-0"><i class="bi bi-emoji-smile"></i></span>
-          <input type="text" name="user_input" class="form-control border-start-0 border-end-0" placeholder="Type your message..." required>
-          <button class="btn btn-success" type="submit"><i class="bi bi-send-fill"></i></button>
-        </form>
-      </div>
-
     </div>
+  </div>
+
+  <!-- Chat Body -->
+  <div id="chat-body">
+    {% if user_input %}
+      <div class="d-flex justify-content-end">
+        <div class="chat-bubble chat-user">
+          {{ user_input }}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if response %}
+      <div class="d-flex align-items-start">
+        <div class="chat-bubble chat-bot">
+          {{ response|safe }}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  <!-- Input Field -->
+  <div class="chat-input position-sticky bottom-0 w-100">
+    <form id="chat-form" method="POST" class="input-group" action="{{ url_for('ai.chatbot') }}">
+      <span class="input-group-text bg-white"><i class="bi bi-chat-dots"></i></span>
+      <input type="text" name="user_input" class="form-control" placeholder="Describe your symptoms..." required>
+      <button class="btn btn-success" type="submit"><i class="bi bi-send-fill"></i></button>
+    </form>
   </div>
 </div>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Auto-scroll to latest message -->
+<!-- Scroll & History Clean -->
 <script>
   const chatBody = document.getElementById('chat-body');
   chatBody.scrollTop = chatBody.scrollHeight;
+
+  // Prevent form resubmission on refresh
+  if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
+  }
 </script>
 
 </body>
