@@ -1,0 +1,241 @@
+[
+  {
+    "category": "Common Diseases",
+    "sub_category": "Respiratory Infections",
+    "diseases": [
+      {
+        "name": "Common Cold",
+        "description": "A viral infection of the nose and throat.",
+        "symptoms": ["Runny nose", "Sneezing", "Sore throat", "Cough"],
+        "medicines": [
+          {"name": "Paracetamol", "dosage": "500mg", "frequency": "Thrice a day", "type": "Oral"},
+          {"name": "Cetirizine", "dosage": "10mg", "frequency": "Once a day", "type": "Oral"}
+        ]
+      },
+      {
+        "name": "Flu (Influenza)",
+        "description": "A viral infection that attacks the respiratory system.",
+        "symptoms": ["Fever", "Chills", "Muscle aches", "Fatigue"],
+        "medicines": [
+          {"name": "Oseltamivir", "dosage": "75mg", "frequency": "Twice a day", "type": "Oral"},
+          {"name": "Paracetamol", "dosage": "500mg", "frequency": "As needed", "type": "Oral"}
+        ]
+      },
+      {
+        "name": "Allergic Rhinitis",
+        "description": "An allergic reaction causing sneezing and nasal congestion.",
+        "symptoms": ["Sneezing", "Runny nose", "Itchy eyes"],
+        "medicines": [
+          {"name": "Loratadine", "dosage": "10mg", "frequency": "Once a day", "type": "Oral"},
+          {"name": "Nasal Spray", "dosage": "2 sprays", "frequency": "Twice a day", "type": "Nasal"}
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Common Diseases",
+    "sub_category": "Digestive Issues",
+    "diseases": [
+      {
+        "name": "Indigestion",
+        "description": "Discomfort in the stomach due to difficulty in digesting food.",
+        "symptoms": ["Bloating", "Nausea", "Gas", "Acid reflux"],
+        "medicines": [
+          {"name": "Domperidone", "dosage": "10mg", "frequency": "Before meals", "type": "Oral"},
+          {"name": "Pantoprazole", "dosage": "40mg", "frequency": "Once a day", "type": "Oral"}
+        ]
+      },
+      {
+        "name": "Constipation",
+        "description": "Infrequent or difficult bowel movements.",
+        "symptoms": ["Hard stools", "Abdominal discomfort", "Straining"],
+        "medicines": [
+          {"name": "Lactulose", "dosage": "15ml", "frequency": "Once a day", "type": "Oral"},
+          {"name": "Isabgol", "dosage": "2 tsp", "frequency": "With warm water at bedtime", "type": "Oral"}
+        ]
+      },
+      {
+        "name": "Diarrhea",
+        "description": "Loose, watery stools occurring more frequently than usual.",
+        "symptoms": ["Loose motions", "Stomach cramps", "Dehydration"],
+        "medicines": [
+          {"name": "ORS", "dosage": "1 sachet", "frequency": "After each stool", "type": "Oral"},
+          {"name": "Loperamide", "dosage": "2mg", "frequency": "After each loose stool", "type": "Oral"}
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Common Diseases",
+    "sub_category": "Skin Conditions",
+    "diseases": [
+      {
+        "name": "Acne",
+        "description": "A skin condition caused by clogged hair follicles.",
+        "symptoms": ["Pimples", "Blackheads", "Whiteheads"],
+        "medicines": [
+          {"name": "Benzoyl Peroxide", "dosage": "2.5% gel", "frequency": "Twice a day", "type": "Topical"},
+          {"name": "Clindamycin", "dosage": "1% gel", "frequency": "Once a day", "type": "Topical"}
+        ]
+      },
+      {
+        "name": "Fungal Infection",
+        "description": "Infection caused by fungus, common in moist areas.",
+        "symptoms": ["Itching", "Redness", "Scaling"],
+        "medicines": [
+          {"name": "Clotrimazole", "dosage": "1% cream", "frequency": "Twice a day", "type": "Topical"},
+          {"name": "Fluconazole", "dosage": "150mg", "frequency": "Once a week", "type": "Oral"}
+        ]
+      },
+      {
+        "name": "Dandruff",
+        "description": "A common scalp condition causing flaking skin.",
+        "symptoms": ["Itchy scalp", "White flakes", "Dryness"],
+        "medicines": [
+          {"name": "Ketoconazole Shampoo", "dosage": "Apply", "frequency": "Twice a week", "type": "Topical"}
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Common Diseases",
+    "sub_category": "General Conditions",
+    "diseases": [
+      {
+        "name": "Fever",
+        "description": "An elevated body temperature often due to infection.",
+        "symptoms": ["High temperature", "Chills", "Sweating"],
+        "medicines": [
+          {"name": "Paracetamol", "dosage": "500mg", "frequency": "Thrice a day", "type": "Oral"}
+        ]
+      },
+      {
+        "name": "Headache",
+        "description": "Pain in the head or upper neck.",
+        "symptoms": ["Throbbing pain", "Pressure", "Sensitivity to light"],
+        "medicines": [
+          {"name": "Ibuprofen", "dosage": "400mg", "frequency": "Twice a day", "type": "Oral"},
+          {"name": "Paracetamol", "dosage": "500mg", "frequency": "As needed", "type": "Oral"}
+        ]
+      },
+      {
+        "name": "Muscle Cramps",
+        "description": "Sudden, involuntary muscle contractions.",
+        "symptoms": ["Muscle pain", "Stiffness", "Tightness"],
+        "medicines": [
+          {"name": "Magnesium", "dosage": "250mg", "frequency": "Once a day", "type": "Oral"},
+          {"name": "Pain relief gel", "dosage": "Apply", "frequency": "As needed", "type": "Topical"}
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Common Diseases",
+    "sub_category": "Eye & Dental",
+    "diseases": [
+      {
+        "name": "Conjunctivitis",
+        "description": "Inflammation of the conjunctiva, also called pink eye.",
+        "symptoms": ["Red eyes", "Itching", "Watery discharge"],
+        "medicines": [
+          {"name": "Lubricant Eye Drops", "dosage": "2 drops", "frequency": "4 times a day", "type": "Eye drops"},
+          {"name": "Antibiotic Eye Drops", "dosage": "2 drops", "frequency": "3 times a day", "type": "Eye drops"}
+        ]
+      },
+      {
+        "name": "Toothache",
+        "description": "Pain around a tooth due to cavity or infection.",
+        "symptoms": ["Throbbing pain", "Sensitivity", "Swelling"],
+        "medicines": [
+          {"name": "Paracetamol", "dosage": "500mg", "frequency": "As needed", "type": "Oral"},
+          {"name": "Clove oil", "dosage": "Apply to affected area", "frequency": "As needed", "type": "Topical"}
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Common Diseases",
+    "sub_category": "Eye Conditions",
+    "diseases": [
+      {
+        "name": "Conjunctivitis",
+        "description": "Inflammation or infection of the conjunctiva, also known as pink eye.",
+        "symptoms": ["Red eyes", "Itching", "Discharge", "Watery eyes"],
+        "medicines": [
+          {"name": "Ofloxacin Eye Drops", "dosage": "0.3%", "frequency": "3-4 times a day", "type": "Ophthalmic"},
+          {"name": "Artificial Tears", "dosage": "As needed", "frequency": "3-5 times a day", "type": "Ophthalmic"}
+        ]
+      },
+      {
+        "name": "Dry Eyes",
+        "description": "A condition where eyes don't produce enough tears.",
+        "symptoms": ["Dryness", "Burning", "Redness", "Blurred vision"],
+        "medicines": [
+          {"name": "Carboxymethylcellulose Eye Drops", "dosage": "0.5%", "frequency": "As needed", "type": "Ophthalmic"}
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Common Diseases",
+    "sub_category": "Dental Issues",
+    "diseases": [
+      {
+        "name": "Toothache",
+        "description": "Pain in or around a tooth, usually due to decay or infection.",
+        "symptoms": ["Sharp pain", "Sensitivity", "Swelling"],
+        "medicines": [
+          {"name": "Paracetamol", "dosage": "500mg", "frequency": "Thrice a day", "type": "Oral"},
+          {"name": "Amoxicillin", "dosage": "500mg", "frequency": "Thrice a day", "type": "Oral"}
+        ]
+      },
+      {
+        "name": "Gingivitis",
+        "description": "Inflammation of the gums, often caused by plaque buildup.",
+        "symptoms": ["Swollen gums", "Bleeding", "Bad breath"],
+        "medicines": [
+          {"name": "Chlorhexidine Mouthwash", "dosage": "0.2%", "frequency": "Twice a day", "type": "Oral Rinse"}
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Common Diseases",
+    "sub_category": "Allergic Reactions",
+    "diseases": [
+      {
+        "name": "Seasonal Allergies",
+        "description": "Allergic reaction to pollen and environmental allergens.",
+        "symptoms": ["Sneezing", "Itchy eyes", "Runny nose", "Congestion"],
+        "medicines": [
+          {"name": "Levocetirizine", "dosage": "5mg", "frequency": "Once a day", "type": "Oral"},
+          {"name": "Fluticasone Nasal Spray", "dosage": "50mcg", "frequency": "Once a day", "type": "Nasal"}
+        ]
+      },
+      {
+        "name": "Skin Allergy",
+        "description": "Reaction of the skin to allergens causing rashes or hives.",
+        "symptoms": ["Redness", "Itching", "Swelling"],
+        "medicines": [
+          {"name": "Hydrocortisone Cream", "dosage": "1%", "frequency": "Twice a day", "type": "Topical"},
+          {"name": "Cetirizine", "dosage": "10mg", "frequency": "Once a day", "type": "Oral"}
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Common Diseases",
+    "sub_category": "Urinary Tract",
+    "diseases": [
+      {
+        "name": "Urinary Tract Infection (UTI)",
+        "description": "Infection in any part of the urinary system, most often the bladder.",
+        "symptoms": ["Burning sensation", "Frequent urination", "Pelvic pain"],
+        "medicines": [
+          {"name": "Nitrofurantoin", "dosage": "100mg", "frequency": "Twice a day", "type": "Oral"},
+          {"name": "Cranberry Extract", "dosage": "300mg", "frequency": "Once a day", "type": "Oral"}
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,136 @@
+[
+  {
+    "category": "Mental Health",
+    "sub_category": "Mood Disorders",
+    "diseases": [
+      {
+        "name": "Depression",
+        "description": "A common mood disorder causing persistent sadness and loss of interest.",
+        "symptoms": ["Sadness", "Loss of interest", "Fatigue", "Sleep disturbances"],
+        "medicines": [
+          {"name": "Fluoxetine", "dosage": "20mg", "frequency": "Once a day", "type": "Oral"},
+          {"name": "Sertraline", "dosage": "50mg", "frequency": "Once a day", "type": "Oral"}
+        ]
+      },
+      {
+        "name": "Bipolar Disorder",
+        "description": "A condition marked by extreme mood swings including emotional highs and lows.",
+        "symptoms": ["Manic episodes", "Depressive episodes", "Irritability"],
+        "medicines": [
+          {"name": "Lithium", "dosage": "300mg", "frequency": "Twice a day", "type": "Oral"},
+          {"name": "Valproate", "dosage": "500mg", "frequency": "Twice a day", "type": "Oral"}
+        ]
+      },
+      {
+        "name": "Cyclothymic Disorder",
+        "description": "A milder form of bipolar disorder involving mood swings.",
+        "symptoms": ["Mood instability", "Emotional highs and lows", "Mild depression"],
+        "medicines": [
+          {"name": "Lamotrigine", "dosage": "25mg", "frequency": "Once a day", "type": "Oral"}
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Mental Health",
+    "sub_category": "Anxiety Disorders",
+    "diseases": [
+      {
+        "name": "Generalized Anxiety Disorder",
+        "description": "Chronic anxiety and worry about everyday life events.",
+        "symptoms": ["Restlessness", "Irritability", "Fatigue", "Muscle tension"],
+        "medicines": [
+          {"name": "Escitalopram", "dosage": "10mg", "frequency": "Once a day", "type": "Oral"},
+          {"name": "Buspirone", "dosage": "10mg", "frequency": "Twice a day", "type": "Oral"}
+        ]
+      },
+      {
+        "name": "Panic Disorder",
+        "description": "Characterized by sudden episodes of intense fear and discomfort.",
+        "symptoms": ["Heart palpitations", "Sweating", "Chest pain", "Fear of losing control"],
+        "medicines": [
+          {"name": "Paroxetine", "dosage": "20mg", "frequency": "Once a day", "type": "Oral"},
+          {"name": "Clonazepam", "dosage": "0.5mg", "frequency": "Twice a day", "type": "Oral"}
+        ]
+      },
+      {
+        "name": "Social Anxiety Disorder",
+        "description": "Intense fear of social situations and being judged by others.",
+        "symptoms": ["Blushing", "Sweating", "Trembling", "Avoiding social situations"],
+        "medicines": [
+          {"name": "Sertraline", "dosage": "50mg", "frequency": "Once a day", "type": "Oral"},
+          {"name": "Propranolol", "dosage": "10mg", "frequency": "As needed", "type": "Oral"}
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Mental Health",
+    "sub_category": "Psychotic Disorders",
+    "diseases": [
+      {
+        "name": "Schizophrenia",
+        "description": "A severe disorder affecting how a person thinks, feels, and behaves.",
+        "symptoms": ["Hallucinations", "Delusions", "Disorganized thinking", "Flat affect"],
+        "medicines": [
+          {"name": "Risperidone", "dosage": "2mg", "frequency": "Once or twice a day", "type": "Oral"},
+          {"name": "Olanzapine", "dosage": "10mg", "frequency": "Once a day", "type": "Oral"}
+        ]
+      },
+      {
+        "name": "Schizoaffective Disorder",
+        "description": "A condition featuring symptoms of schizophrenia and mood disorder.",
+        "symptoms": ["Delusions", "Mood swings", "Hallucinations", "Depression"],
+        "medicines": [
+          {"name": "Paliperidone", "dosage": "6mg", "frequency": "Once a day", "type": "Oral"},
+          {"name": "Quetiapine", "dosage": "200mg", "frequency": "Once a day", "type": "Oral"}
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Mental Health",
+    "sub_category": "Neurodevelopmental Disorders",
+    "diseases": [
+      {
+        "name": "Autism Spectrum Disorder",
+        "description": "A developmental disorder affecting communication and behavior.",
+        "symptoms": ["Communication difficulties", "Repetitive behaviors", "Limited interests"],
+        "medicines": [
+          {"name": "Risperidone", "dosage": "0.5mg", "frequency": "Once a day", "type": "Oral"}
+        ]
+      },
+      {
+        "name": "ADHD",
+        "description": "A disorder marked by ongoing inattention and/or hyperactivity-impulsivity.",
+        "symptoms": ["Inattention", "Hyperactivity", "Impulsivity"],
+        "medicines": [
+          {"name": "Methylphenidate", "dosage": "10mg", "frequency": "Twice a day", "type": "Oral"},
+          {"name": "Atomoxetine", "dosage": "40mg", "frequency": "Once a day", "type": "Oral"}
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Mental Health",
+    "sub_category": "Eating Disorders",
+    "diseases": [
+      {
+        "name": "Anorexia Nervosa",
+        "description": "An eating disorder causing people to obsess about weight and diet.",
+        "symptoms": ["Extreme weight loss", "Fear of gaining weight", "Distorted body image"],
+        "medicines": [
+          {"name": "Fluoxetine", "dosage": "60mg", "frequency": "Once a day", "type": "Oral"}
+        ]
+      },
+      {
+        "name": "Bulimia Nervosa",
+        "description": "A serious eating disorder marked by bingeing, followed by methods to avoid weight gain.",
+        "symptoms": ["Binge eating", "Purging", "Guilt"],
+        "medicines": [
+          {"name": "Topiramate", "dosage": "50mg", "frequency": "Once a day", "type": "Oral"}
+        ]
+      }
+    ]
+  }
+]

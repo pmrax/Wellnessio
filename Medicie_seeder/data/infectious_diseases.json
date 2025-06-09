@@ -1,0 +1,50 @@
+[
+  {
+    "category": "Infectious Diseases",
+    "sub_category": "Respiratory Infections",
+    "diseases": [
+      {
+        "name": "Tuberculosis",
+        "description": "A serious infectious disease that mainly affects the lungs.",
+        "symptoms": ["Cough lasting more than 3 weeks", "Chest pain", "Coughing up blood"],
+        "medicines": [
+          {"name": "Isoniazid", "dosage": "300mg", "frequency": "Once daily", "type": "Antibiotic"},
+          {"name": "Rifampin", "dosage": "600mg", "frequency": "Once daily", "type": "Antibiotic"},
+          {"name": "Ethambutol", "dosage": "15mg/kg", "frequency": "Once daily", "type": "Antibiotic"}
+        ]
+      },
+      {
+        "name": "Pneumonia",
+        "description": "An infection that inflames the air sacs in one or both lungs.",
+        "symptoms": ["Chest pain", "Cough with phlegm", "Fever", "Shortness of breath"],
+        "medicines": [
+          {"name": "Azithromycin", "dosage": "500mg on day 1, then 250mg daily", "frequency": "Once daily", "type": "Antibiotic"},
+          {"name": "Levofloxacin", "dosage": "500mg", "frequency": "Once daily", "type": "Antibiotic"}
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Infectious Diseases",
+    "sub_category": "Viral Infections",
+    "diseases": [
+      {
+        "name": "Influenza",
+        "description": "A contagious respiratory illness caused by influenza viruses.",
+        "symptoms": ["Fever", "Chills", "Muscle aches", "Fatigue"],
+        "medicines": [
+          {"name": "Oseltamivir", "dosage": "75mg", "frequency": "Twice daily for 5 days", "type": "Antiviral"}
+        ]
+      },
+      {
+        "name": "Hepatitis B",
+        "description": "A serious liver infection caused by the hepatitis B virus (HBV).",
+        "symptoms": ["Abdominal pain", "Dark urine", "Jaundice", "Fatigue"],
+        "medicines": [
+          {"name": "Entecavir", "dosage": "0.5mg", "frequency": "Once daily", "type": "Antiviral"},
+          {"name": "Tenofovir", "dosage": "300mg", "frequency": "Once daily", "type": "Antiviral"}
+        ]
+      }
+    ]
+  }
+]

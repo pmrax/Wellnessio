@@ -1,0 +1,52 @@
+[
+  {
+    "category": "Chronic Conditions",
+    "sub_category": "Metabolic",
+    "diseases": [
+      {
+        "name": "Diabetes",
+        "description": "A chronic condition where the body is unable to regulate blood sugar properly.",
+        "symptoms": ["Increased thirst", "Frequent urination", "Fatigue", "Blurred vision"],
+        "medicines": [
+          {"name": "Metformin", "dosage": "500mg", "frequency": "Twice a day", "type": "Oral"},
+          {"name": "Insulin", "dosage": "Varies", "frequency": "As prescribed", "type": "Injection"}
+        ]
+      },
+      {
+        "name": "Hypothyroidism",
+        "description": "A condition where the thyroid gland does not produce enough thyroid hormones.",
+        "symptoms": ["Fatigue", "Weight gain", "Cold intolerance", "Depression"],
+        "medicines": [
+          {"name": "Levothyroxine", "dosage": "50-100mcg", "frequency": "Once a day", "type": "Oral"}
+        ]
+      },
+      {
+        "name": "Hyperthyroidism",
+        "description": "Overactive thyroid producing excess hormones.",
+        "symptoms": ["Weight loss", "Rapid heartbeat", "Nervousness", "Heat intolerance"],
+        "medicines": [
+          {"name": "Methimazole", "dosage": "5-30mg", "frequency": "Once or twice a day", "type": "Oral"},
+          {"name": "Propranolol", "dosage": "10-40mg", "frequency": "3-4 times a day", "type": "Oral"}
+        ]
+      },
+      {
+        "name": "Polycystic Ovary Syndrome (PCOS)",
+        "description": "A hormonal disorder causing enlarged ovaries with small cysts.",
+        "symptoms": ["Irregular periods", "Acne", "Weight gain", "Excess hair growth"],
+        "medicines": [
+          {"name": "Oral contraceptives", "dosage": "Varies", "frequency": "Daily", "type": "Oral"},
+          {"name": "Metformin", "dosage": "500mg", "frequency": "Twice a day", "type": "Oral"}
+        ]
+      },
+      {
+        "name": "Cushing's Syndrome",
+        "description": "A disorder caused by high levels of cortisol in the body.",
+        "symptoms": ["Weight gain", "Round face", "High blood pressure", "Weak muscles"],
+        "medicines": [
+          {"name": "Ketoconazole", "dosage": "200mg", "frequency": "Twice a day", "type": "Oral"},
+          {"name": "Metyrapone", "dosage": "250mg", "frequency": "3-4 times a day", "type": "Oral"}
+        ]
+      }
+    ]
+  }
+]
