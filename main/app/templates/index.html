@@ -14,6 +14,8 @@
 
 <body>
     <div class="main">
+      <img src="{{ url_for('static', filename='default_images/Medical.jpg') }}" alt="Background image">
+      <div class="overlay">
         <div class="navbar">
             <div class="icon">
                 <pre><h2 class="logo">Wellnessio <i class="fa-solid fa-heart-pulse"></i></h2></pre>
@@ -21,8 +23,8 @@
             <div class="menu">
                 <ul class="nav-list">
                     <li><a href="{{ url_for('auth.index') }}" class="home">HOME</a></li>
-                    <li><a href="#" class="who_we_are">WHO WE ARE?</a></li>
-                    <li><a href="#" class="our_services">OUR SERVICES</a></li>
+                    <li><a href="{{ url_for('public.about') }}" class="who_we_are">WHO WE ARE?</a></li>
+                    <li><a href="{{ url_for('public.service') }}" class="our_services">OUR SERVICES</a></li>
                     <li><a href="#" class="your_goals">YOUR GOALS</a></li>
                 </ul>
             </div>
@@ -59,6 +61,7 @@
                 <a href="#" class="cn">JOIN COMMUNITY</a>
             </div>
         </div>
+      </div>
     </div>
 
     <div class="cards">

@@ -1,0 +1,12 @@
+from flask import Blueprint, render_template
+
+public_bp = Blueprint("public", __name__)
+
+@public_bp.route("/about", methods=["GET"])
+def about():
+    return render_template("public/who_we_are.html")
+
+@public_bp.route("/service")
+def service():
+    return render_template("public/our_service.html")
+
