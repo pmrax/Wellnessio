@@ -1,122 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Service Project.Css">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Services - Wellnessio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    .section-title {
+      margin: 60px 0 30px;
+      text-align: center;
+    }
+    .card:hover {
+      transform: scale(1.02);
+      transition: 0.3s ease-in-out;
+    }
+    .card i {
+      font-size: 2rem;
+      color: #0d6efd;
+    }
+  </style>
 </head>
 <body>
-        <ul>
-        <li><h1>Services :</h1></li>
 
+  <div class="container py-5">
 
-            <ul>
-            <p>
-                <li>DEPARTMENT OF ADULT & PAEDIATRIC ORTHOPEDIC &JOINT REPLACEMENT SURGERY</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF ADULT ,PAEDIATRIC & NEONATAL CARDIAC & VASCULAR SURGERY</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF ADVANCED GASTROINTESTINAL BARIATRIC &GASTROINTESTINAL ONCO SURGERY</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF CARDIOLOGY</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF CRITICAL CARE</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF DENTAL SURGERY</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF DERMATOLOGY</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF EAR,NOSE, THROAT (E.N.T)</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF GENERAL SURGERY</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF IN VITRO FERTILIZATION (IVF CLINIC) & REPRODUCTIVE MEDICINE</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF INTERNAL MEDICINE</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF INTERVENTIONAL GASTROENTEROLOGY</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF NEPHROLOGY AND DIALYSIS</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF NEUROLOGY</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF NEUROSURGERY (BRAIN AND SPINE INTERVENTION)</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF OBSTETRICS AND GYNAECOLOGY</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF OPHTHALMOLOGY</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF PLASTIC AND COSMETIC SURGERY</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF PULMONOLOGY AND PULMONOLOGY INTERVENTIONS</li>
-                <br>
-                <br>
-                <li>DEPARTMENT OF UROLOGY , UROLOGY INTERVENTIONS & RETROGRADE INTRA-RENAL SURGERY</li>
-                <br>
-                <br>
-                <li id="th"><h3>Therapist :</h3></li>
-                <ul>
-                <li>Arthritis treatment</li>
-                <br>
-                <li>Back pain</li>
-                <br>
-                <li>Foot & ankle pain</li>
-                <br>
-                <li>Geriatric physiotherapy</li>
-                <br>
-                <li>Knee pain</li>
-                <br>
-                <li>Neurological physiotherapy</li>
-                <br>
-                <li>Pediatric physiotherapy</li>
-                <br>
-                <li>Physical therapy</li>
-                <br>
-                <li>Post-surgical rehabilitation</li>
-                <br>
-                <li>Shoulder pain</li>
-                <br>
-                <li>Spinal injuries</li>
-                <br>
-                <li>Therapeutic Exercise</li>
-                <br>
-                </ul>
-                <li id="bl"><h3>Blood Testing Service :</h3></li>
-                <ul>
-                <li>Allergy testing</li>
-                <br>
-                <li>Blood type & rh factor</li>
-                <br>
-                <li>Diabetes testing</li>
-                <br>
-                <li>General health</li>
-                <br>
-                <li>STD testing</li>
-                <br>
-                <li>Tuberculosis</li>
-                <br>
-                </ul>
-            </p>
-            </ul>
-            </ul>
+    <h1 class="section-title">Our Medical Departments</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      <!-- Orthopedic -->
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <i class="bi bi-person-fill"></i>
+            <h5 class="card-title mt-2">Orthopedic & Joint Replacement</h5>
+            <p class="card-text">Advanced care for musculoskeletal conditions, surgeries, and joint replacements.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cardiac -->
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <i class="bi bi-heart-pulse-fill"></i>
+            <h5 class="card-title mt-2">Cardiac & Vascular Surgery</h5>
+            <p class="card-text">Adult, Pediatric & Neonatal Cardiac surgeries and vascular interventions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gastrointestinal -->
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <i class="bi bi-droplet-half"></i>
+            <h5 class="card-title mt-2">GI & Bariatric Surgery</h5>
+            <p class="card-text">Advanced gastrointestinal, bariatric, and oncology surgical care.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nephrology -->
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <i class="bi bi-water"></i>
+            <h5 class="card-title mt-2">Nephrology & Dialysis</h5>
+            <p class="card-text">Renal care, dialysis services, and chronic kidney disease management.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Neurology -->
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <i class="bi bi-cpu"></i>
+            <h5 class="card-title mt-2">Neurology & Neurosurgery</h5>
+            <p class="card-text">Brain and spine interventions, neurological disorder treatment.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- IVF & Fertility -->
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <i class="bi bi-gender-female"></i>
+            <h5 class="card-title mt-2">IVF & Reproductive Medicine</h5>
+            <p class="card-text">Comprehensive fertility and IVF treatment services for all genders.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Therapist Section -->
+    <h2 class="section-title mt-5">Therapy & Rehabilitation</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <i class="bi bi-universal-access-circle"></i>
+            <h5 class="card-title mt-2">Physiotherapy</h5>
+            <p class="card-text">Back pain, arthritis, post-surgical rehab, sports injuries, and more.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <i class="bi bi-person-wheelchair"></i>
+            <h5 class="card-title mt-2">Geriatric & Pediatric Therapy</h5>
+            <p class="card-text">Specialized physiotherapy for children and elderly patients.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <i class="bi bi-brain"></i>
+            <h5 class="card-title mt-2">Neurotherapy</h5>
+            <p class="card-text">Recovery from spinal cord injury, stroke, and neurological trauma.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Blood Testing Section -->
+    <h2 class="section-title mt-5">Blood Testing Services</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <i class="bi bi-droplet"></i>
+            <h5 class="card-title mt-2">General Diagnostics</h5>
+            <p class="card-text">CBC, blood grouping, cholesterol, sugar levels, and liver function tests.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <i class="bi bi-thermometer-half"></i>
+            <h5 class="card-title mt-2">Infectious Disease Testing</h5>
+            <p class="card-text">STD, TB, malaria, dengue, COVID-19, and more rapid testing solutions.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body">
+            <i class="bi bi-droplet-fill"></i>
+            <h5 class="card-title mt-2">Hormone & Allergy Testing</h5>
+            <p class="card-text">Thyroid profiles, cortisol, reproductive hormones, and allergen panels.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

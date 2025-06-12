@@ -1,0 +1,98 @@
+body {
+    text-align: center;
+    margin-top: 2rem;
+    background-color: rgb(225, 219, 219);
+    font-family: 'Roboto', sans-serif;
+    padding: 30px;
+    /* background: linear-gradient(0.25turn, rgb(123, 123, 201), rgb(243, 160, 160)); */
+    background: linear-gradient(0.25turn, rgb(60, 104, 154), rgb(211, 227, 121));
+}
+
+input {
+    width: 15rem;
+    height: 4rem;
+    background-color: rgb(188, 206, 211);
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 8px;
+    /* border: 2px solid #ddd; */
+    width: 300px;
+    margin-right: 10px;
+    font-size: 20px;
+
+    &:hover {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+}
+
+button {
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: #1e8f2f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        /* opacity: 0.6; */
+        background-color: #0056b3;
+    }
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+li {
+    background-color: #fff6f6;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.delete {
+    background-color: rgb(188, 54, 54);
+    padding: 5px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+        opacity: 0.8;
+        background-color: #0056b3;
+    }
+}
+
+#clearAll {
+    background-color: rgb(188, 54, 54);
+    padding: 5px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+
+    &:hover {
+        opacity: 0.85;
+        background-color: #0056b3;
+
+    }
+}
+
+/* check box feature */
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}

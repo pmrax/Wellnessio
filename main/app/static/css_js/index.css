@@ -64,18 +64,23 @@ body {
 }
 
 .nav-list li {
+    position: relative;
     margin: 0 15px;
 }
 
 .nav-list a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
-    color: #333;
+    color: #181919;
     font-weight: 500;
+    display: block;
     transition: color 0.3s;
 }
 
 .nav-list a:hover {
-    color: #00c4cc;
+    padding: 2px 6px;
+    border-radius: 50px;
+    border: 1px solid gray;
 }
 
 /* Search */
@@ -161,47 +166,48 @@ body {
 
 /* Content Styles */
 .content {
-    padding: 60px 40px;
     position: relative;
-    z-index: 1;
-    color: white;
+}
+
+.content_text {
+    padding-top: 120px;
+    padding-left: 30%;
 }
 
 .content_text h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     line-height: 1.2;
     margin-bottom: 20px;
 }
 
 .Vr {
-    color: #ffdd57;
+    color: #586703;
 }
 
 .par {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin: 20px 0;
     font-style: italic;
 }
 
 .cn {
-    padding: 12px 25px;
+    padding: 11px 25px;
     margin-right: 15px;
-    background: #ff4444;
-    border: none;
-    border-radius: 25px;
-    color: white;
+    margin-top: 16px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    color: #1293d9;
     cursor: pointer;
     transition: transform 0.3s, background 0.3s;
-}
-
-.cn:hover {
-    transform: scale(1.05);
-    background: #cc3333;
+    text-decoration: none;
 }
 
 .cn a {
-    color: white;
     text-decoration: none;
+}
+
+.cn a:hover {
+    color: #0056b3;
 }
 
 /* Cards Section */
@@ -241,32 +247,17 @@ body {
 }
 
 /* Footer */
-.footer-dark {
-    background: #1a2b49;
-    color: white;
+.footer-link {
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-.footer-top {
-    padding: 60px 0;
-}
-
-.footer-bottom {
-    background: #15213b;
-}
-
-.footer-logo img {
-    width: 60px;
-    height: 60px;
-}
-
-.social-icon-style-12 ul li a {
-    color: white;
-    margin: 0 5px;
-    transition: color 0.3s;
-}
-
-.social-icon-style-12 ul li a:hover {
-    color: #00c4cc;
+.footer-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 /* Responsive Design */

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal Tracking</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css_js/public/css/goal_track.css') }}">
+</head>
+
+<body>
+    <h1>Goal Tracking - Add your goals here!</h1>
+    <input placeholder="enter your goal">
+    <button>Add Goal</button>
+    <ul>
+        <li>Have Medicine <button class="delete">Remove</button></li>
+    </ul>
+
+    <button id="clearAll">Clear All Goals</button>
+
+
+    <script src="{{ url_for('static', filename='css_js/public/js/goal_track.js') }}"></script>
+</body>
+
+</html>

@@ -14,3 +14,10 @@ def service():
 def community():
     return render_template("public/join_community.html")
 
+@public_bp.route("/goal")
+def goal():
+    return render_template("public/goal_track.html")
+
+@public_bp.route("/game")
+def game():
+    return render_template("public/wellness_games.html")
