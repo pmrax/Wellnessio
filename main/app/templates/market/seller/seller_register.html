@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Registration</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+
+        <h2 class="mb-4">Seller Registration</h2>
+
+        <!-- User Info from Auth Database -->
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                Account Details
+            </div>
+            <div class="card-body">
+                <p><strong>Full Name:</strong></p>
+                <p><strong>Email:</strong></p>
+                <p><strong>Mobile:</strong></p>
+                <p><strong>DOB:</strong></p>
+                <p><strong>Joined on:</strong></p>
+            </div>
+        </div>
+
+         <!-- Seller Additional Details Form -->
+         <div class="card">
+            <div class="card-header bg-success text-white">
+                Seller Information 
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('seller_auth.register') }}" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="business_name" class="form-label">Business Name</label>
+                        <input type="text" class="form-control" id="business_name" name="business_name" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="business_type" class="form-label">Business Type</label>
+                        <select class="form-select" id="business_type" name="business_type" required>
+                            <option value="">Select Business Type</option>
+                            <option value="Individual">Individual</option>
+                            <option value="Company">Company</option>
+                            <option value="LLP">LLP</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="product_category" class="form-label">Product Category</label>
+                        <select class="form-select" id="product_category" name="product_category" required>
+                            <option value="">Select Category</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Fashion">Fashion</option>
+                            <option value="Home & Kitchen">Home & Kitchen</option>
+                            <option value="Beauty & Health">Beauty & Health</option>
+                            <option value="Books">Books</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="gst" class="form-label">GST Number (Optional)</label>
+                        <input type="text" class="form-control" id="gst" name="gst">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Business Address</label>
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <label for="street" class="form-label">Street</label>
+                                <input type="text" class="form-control" id="street" name="street" required>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label for="pincode" class="form-label">Pincode</label>
+                                <input type="text" class="form-control" id="pincode" name="pincode" required>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label for="district" class="form-label">District</label>
+                                <input type="text" class="form-control" id="district" name="district" required>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label for="state" class="form-label">State</label>
+                                <input type="text" class="form-control" id="state" name="state" required>
+                            </div>
+                            <div class="col-12 mb-2">
+                                <label for="country" class="form-label">Country</label>
+                                <input type="text" class="form-control" id="country" name="country" required>
+                            </div>
+                        </div>
+                    </div>                    
+
+                    <div class="mb-3">
+                        <label for="govt_id" class="form-label">Upload Government ID (Aadhar, Passport, etc.)</label>
+                        <input type="file" class="form-control" id="govt_id" name="govt_id" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Warehouse/Inventory Details (Optional)</label>
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <label for="warehouse_name" class="form-label">Warehouse Name</label>
+                                <input type="text" class="form-control" id="warehouse_name" name="warehouse_name">
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label for="warehouse_pincode" class="form-label">Pincode</label>
+                                <input type="text" class="form-control" id="warehouse_pincode" name="warehouse_pincode">
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label for="warehouse_street" class="form-label">Street</label>
+                                <input type="text" class="form-control" id="warehouse_street" name="warehouse_street">
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label for="warehouse_district" class="form-label">District</label>
+                                <input type="text" class="form-control" id="warehouse_district" name="warehouse_district">
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label for="warehouse_state" class="form-label">State</label>
+                                <input type="text" class="form-control" id="warehouse_state" name="warehouse_state">
+                            </div>
+                            <div class="col-12 mb-2">
+                                <label for="warehouse_country" class="form-label">Country</label>
+                                <input type="text" class="form-control" id="warehouse_country" name="warehouse_country">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="shipping_method" class="form-label">Shipping Method</label>
+                        <select class="form-select" id="shipping_method" name="shipping_method" required>
+                            <option value="">Select Shipping Method</option>
+                            <option value="Self-Shipping">Self-Shipping</option>
+                            <option value="Platform Fulfillment">Platform Fulfillment</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Bank Details</label>
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <label for="account_holder_name" class="form-label">Account Holder Name</label>
+                                <input type="text" class="form-control" id="account_holder_name" name="account_holder_name" required>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label for="account_number" class="form-label">Bank Account Number</label>
+                                <input type="text" class="form-control" id="account_number" name="account_number" required>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label for="ifsc" class="form-label">IFSC Code</label>
+                                <input type="text" class="form-control" id="ifsc" name="ifsc" required>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label for="bank_name" class="form-label">Bank Name</label>
+                                <input type="text" class="form-control" id="bank_name" name="bank_name" required>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label for="branch_name" class="form-label">Branch Name</label>
+                                <input type="text" class="form-control" id="branch_name" name="branch_name" required>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <label for="bank_account_type" class="form-label">Account Type</label>
+                                <select class="form-select" id="bank_account_type" name="bank_account_type" required>
+                                    <option value="">Select Account Type</option>
+                                    <option value="Savings">Savings</option>
+                                    <option value="Current">Current</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="tax_id" class="form-label">Tax Identification Number (Optional)</label>
+                        <input type="text" class="form-control" id="tax_id" name="tax_id">
+                    </div>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="return_policy_agreement" name="return_policy_agreement" required>
+                        <label class="form-check-label" for="return_policy_agreement">
+                            I agree to the <a href="#" data-bs-toggle="modal" data-bs-target="#returnPolicyModal">Return Policy</a>
+                        </label>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">Register as Seller</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Return Policy Modal -->
+    <div class="modal fade" id="returnPolicyModal" tabindex="-1" aria-labelledby="returnPolicyLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="returnPolicyLabel">Return Policy</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Return Window:</strong> Sellers must accept returns within 7-30 days, depending on product type.</p>
+                    <p><strong>Refund Process:</strong> Refunds will be processed once the returned item is inspected and approved.</p>
+                    <p><strong>Exceptions:</strong> Perishable, personalized, and clearance items are not eligible for returns.</p>
+                    <p><strong>Responsibility:</strong> Sellers must provide clear return instructions and a return address.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+

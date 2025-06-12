@@ -35,10 +35,16 @@ def create_app(config_class=Config):
     from app.ai.medicine_routes import ai_bp
     from app.public.public_routes import public_bp
     from app.authenticated.profile_routes import profile_bp
+    from app.market.market_routes import market_bp
+    from app.market.customer.routes.profile_routes import market_profile_bp
+    from app.market.seller.routes.seller_auth_routes import seller_auth_bp
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(ai_bp)
     app.register_blueprint(public_bp)
     app.register_blueprint(profile_bp)
+    app.register_blueprint(market_bp)
+    app.register_blueprint(market_profile_bp, url_prefix="/market")
+    app.register_blueprint(seller_auth_bp, url_prefix="/market")
 
     return app

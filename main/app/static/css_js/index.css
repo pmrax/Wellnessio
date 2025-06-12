@@ -36,6 +36,16 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+.wellnessio_icon {
+    display: flex;
+    align-items: center;
+    height: 10px;
+}
+
+.wellnessio_icon a {
+    text-decoration: none;
+}
+
 .logo {
     color: #00c4cc;
     font-weight: bold;
@@ -68,30 +78,45 @@ body {
     color: #00c4cc;
 }
 
+/* Search */
 .search {
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
-.srch {
-    padding: 8px 15px;
-    border: 1px solid #ddd;
-    border-radius: 20px 0 0 20px;
-    outline: none;
+.search form {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 500px;
 }
 
-.btn {
-    padding: 8px 15px;
-    background: #00c4cc;
-    color: white;
+.search .srch {
+    flex: 1;
+    padding: 8px 20px;
     border: none;
-    border-radius: 0 20px 20px 0;
-    cursor: pointer;
-    transition: background 0.3s;
+    outline: none;
+    font-size: 15px;
+    border-radius: 50px 0 0 50px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.btn:hover {
-    background: #0099a8;
+.search .btn {
+    padding: 8px 25px;
+    background-color: #007bff;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 0 50px 50px 0;
+}
+
+.search .btn:hover {
+    background-color: #0056b3;
 }
 
 /* Profile Dropdown */
@@ -108,6 +133,26 @@ body {
 }
 
 .profile-dropdown .icon.profile a {
+    text-decoration: none;
+    color: #181919;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Market */
+.market {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+.market a {
     text-decoration: none;
     color: #181919;
     font-weight: 500;

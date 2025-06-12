@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Become a Seller</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor_bootstrap/bootstrap.min.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <style>
+        .hero-section { background: center/cover no-repeat; color: white; padding-top: 50px; padding-bottom: 10px; text-align: center; }
+        .hero-section .connectsphere img { width: 40%; height: auto; padding-bottom: 10px; }
+        .hero-section img { width: 10%; height: auto; }
+        .hero-section h1, p { color: black; }
+        .icon-box { text-align: center; padding: 20px; }
+        .icon-box i { font-size: 40px; padding-bottom: 20px; color: #007bff; }
+        .benefits-section img { width: 100%; height: 80%; border-radius: 10px; }
+        .how-it-works img { width: 30%; height: 50%; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <img src="{{ url_for('static', filename='default_images/market/online-seller-icon.png') }}" alt="ConnectSphere Shop">
+        <div class="container">
+            <h1>Sell Online with Ease</h1>
+            <p>Join our marketplace and grow your business effortlessly.</p>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center">Why Sell With Us?</h2>
+        <br>
+        <div class="row text-center">
+            <div class="col-md-4 icon-box">
+                <i class="fas fa-users"></i>
+                <h5>Massive Customer Base</h5>
+                <p>Access millions of potential buyers worldwide.</p>
+            </div>
+            <div class="col-md-4 icon-box">
+                <i class="fas fa-money-check-alt"></i>
+                <h5>Secure Payments</h5>
+                <p>Receive payments safely and on time.</p>
+            </div>
+            <div class="col-md-4 icon-box">
+                <i class="fas fa-headset"></i>
+                <h5>24/7 Support</h5>
+                <p>Get dedicated seller support at any time.</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row benefits-section mt-4">
+            <div class="col-md-6">
+                <h3>Requirements to Become a Seller</h3>
+                <ul>
+                    <li>Registered business or valid identification.</li>
+                    <li>Bank account for secure payments.</li>
+                    <li>High-quality product images and descriptions.</li>
+                    <li>Compliance with marketplace policies.</li>
+                    <li>Ability to manage orders, shipping, and returns.</li>
+                </ul>    
+        
+                <h3 class="mt-4">Seller Benefits</h3>
+                <ul>
+                    <li>Promotions and advertising options to boost sales.</li>
+                    <li>Integration with logistics for hassle-free delivery.</li>
+                    <li>Data insights and analytics to optimize performance.</li>
+                    <li>Opportunity to participate in special sales events.</li>
+                </ul>
+            </div>
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <img src="{{ url_for('static', filename='default_images/market/seller_requirements_benefits.png') }}" 
+                        alt="Seller Benefits" class="rounded">
+            </div>            
+        </div>            
+
+        <h3 class="mt-5">Product Categories & Restrictions</h3>
+        <p>We welcome a wide range of products, including electronics, fashion, home goods, and more. However, certain items like illegal substances, weapons, and counterfeit products are prohibited.</p>
+
+        <h3 class="mt-5">Commission Structure & Fees</h3>
+        <p>Our platform charges a small commission on each sale, typically ranging from 5% to 15%, depending on the product category. No hidden fees.</p>
+
+        <h3 class="mt-5">Shipping & Fulfillment Options</h3>
+        <p>Choose between self-shipping or using our fulfillment service, which ensures fast and reliable deliveries to customers.</p>
+
+        <h3 class="mt-5">Return & Refund Policies</h3>
+        <p>All sellers must comply with our return policy. Customers can request returns within 7-30 days, depending on the product type.</p>
+
+        <h3 class="mt-5">Marketing & Promotions</h3>
+        <p>Boost your sales with advertising options, discount campaigns, and featured listings to attract more customers.</p>
+
+        <h3 class="mt-5">Seller Dashboard Overview</h3>
+        <p>Manage your store, track sales, and analyze performance with our easy-to-use seller dashboard.</p>
+
+        <h3 class="mt-5">Legal & Tax Information</h3>
+        <p>Ensure compliance with local tax regulations. Provide tax details and generate invoices seamlessly.</p>
+
+        <h3 class="mt-5">Success Tips for Sellers</h3>
+        <ul>
+            <li>Use high-quality images and detailed descriptions.</li>
+            <li>Respond to customer inquiries quickly.</li>
+            <li>Offer competitive pricing and promotions.</li>
+            <li>Maintain a good seller rating by fulfilling orders efficiently.</li>
+        </ul>
+
+        <h3 class="mt-5" id="getting-started">How to Get Started?</h3>
+        <br>
+        <div class="row how-it-works">
+            <div class="col-md-3">
+                <img src="{{ url_for('static', filename='default_images/market/register_shop.png') }}" alt="Register Your Shop">
+                <h5>1. Register your shop</h5>
+                <p>Register on our seller portal and verify your details.</p>
+            </div>
+            <div class="col-md-3">
+                <img src="{{ url_for('static', filename='default_images/market/product_list.png') }}" alt="List Your Products">
+                <h5>2. List Your Products</h5>
+                <p>Upload product images, descriptions, and prices.</p>
+            </div>
+            <div class="col-md-3">
+                <img src="{{ url_for('static', filename='default_images/market/start_selling.png') }}" alt="Start Selling">
+                <h5>3. Start Selling</h5>
+                <p>Receive orders and manage deliveries.</p>
+            </div>
+            <div class="col-md-3">
+                <img src="{{ url_for('static', filename='default_images/market/get_paid.png') }}" alt="Get Paid">
+                <h5>4. Get Paid</h5>
+                <p>Receive secure payments directly to your account.</p>
+            </div>
+        </div>
+        <hr>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('seller_auth.register') }}" class="btn btn-success btn-lg">Join as a Seller Now</a>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2025 Wellnessio. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+
+

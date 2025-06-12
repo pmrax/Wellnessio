@@ -10,3 +10,7 @@ def about():
 def service():
     return render_template("public/our_service.html")
 
+@public_bp.route("/community")
+def community():
+    return render_template("public/join_community.html")
+

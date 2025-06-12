@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medishop - Online Medicine Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css_js/market/market.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Wellnessio</h1>
+            </div>
+    
+            <div class="search-bar">
+                <input type="text" placeholder="Search for Medicines & Wellness Products..." id="searchInput">
+            </div>
+    
+            <div class="auth-section">
+                <div class="user_account">
+                    <div class="user-dropdown">
+                        <span id="dropdown-toggle">
+                            {% if session['user_name'] %}
+                                👤{{ session['user_name'] }}
+                                <ul class="dropdown-menu">
+                                    <li><a href="{{ url_for('market_profile.market_profile') }}">👤 Profile</a></li>
+                                    <li><a href="#">Order History</a></li>
+                                    <form method="POST" action="{{ url_for('auth.logout') }}">
+                                        <button type="submit" class="logout">Sign out</button>
+                                    </form>
+                                </ul>
+                            {% else %}
+                                <span class="icon profile">
+                                    <a href="{{ url_for('auth.login') }}">👤Login</a>
+                                </span>
+                            {% endif %}
+                        </span>
+                    </div>
+                </div>
+                <div class="cart">
+                    <a href="#" class="cart-icon"> 🛒 Cart</a>
+                </div>
+                <div class="seller">
+                    <button class="dropbtn">
+                        <a href="{{ url_for('seller_auth.seller') }}"> Become a Seller</a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="products">
+        <div class="container">
+            <div class="product-grid">
+                {% for medicine in medicines %}
+                    <div class="product-card">
+                        <a href="#">
+                            <img src="#" alt="{{ medicine.name }}">
+                            <h3>{{ medicine.name }}</h3>
+                            <p id="price-{{ medicine._id }}">Price: 
+                                {% if medicine.price != "N/A" %}
+                                    {{ medicine.price }} ₹
+                                {% else %}
+                                    <span class="text-danger">Not Available</span>
+                                {% endif %}
+                            </p>
+                        </a>
+                
+                        {% if email %}  <!-- Only show purchase options if logged in -->
+                            {% if medicine.price != "N/A" %}
+                                <form class="add-to-cart-form" data-medicine-id="{{ medicine._id }}">
+                                    <input type="hidden" name="medicine_id" value="{{ medicine._id }}">
+                                    <input type="hidden" name="quantity" value="1">
+                                    <button type="submit" class="btn btn-success">Add to Cart</button>
+                                </form>    
+                            {% else %}
+                                <button class="btn btn-danger" disabled>Out of Stock</button>
+                            {% endif %}
+                        {% else %}
+                            <a href="#" class="btn btn-secondary">Login to Buy</a>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Medishop is a trusted online platform providing high-quality medical supplies and healthcare products.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Customer Support</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Order Tracking</a></li>
+                    <li><a href="#">Shipping & Delivery</a></li>
+                    <li><a href="#">Returns & Refunds</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Special Offers</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Medical Equipment</a></li>
+                    <li><a href="#">Health & Wellness</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Policies</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Payment Methods</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Wellnessio. All rights reserved.</p>
+        </div>
+    </footer>
+    
+
+    <script src="{{ url_for('static', filename='css_js/market/market.js') }}"></script>
+</body>
+</html>
