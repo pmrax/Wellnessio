@@ -3,7 +3,7 @@ import json
 from pymongo import MongoClient
 
 # MongoDB connection
-MONGO_URI = "mongodb+srv://pmrax001:pmrax001@ai.bmwjaxw.mongodb.net/?retryWrites=true&w=majority"
+MONGO_URI = ""
 client = MongoClient(MONGO_URI)
 db = client["wellnessio_ai"]
 collection = db["disease_medicine"]
